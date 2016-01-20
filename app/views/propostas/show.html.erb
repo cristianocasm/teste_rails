@@ -10,17 +10,17 @@
 
 <p>
   <strong>Valor:</strong>
-  <%= @proposta.valor %>
+  <%= number_to_currency @proposta.valor %>
 </p>
 
 <p>
   <strong>Inicio:</strong>
-  <%= @proposta.inicio %>
+  <%= @proposta.inicio.strftime('%d/%m/%Y') %>
 </p>
 
 <p>
   <strong>Fim:</strong>
-  <%= @proposta.fim %>
+  <%= @proposta.fim.strftime('%d/%m/%Y') %>
 </p>
 
 <p>

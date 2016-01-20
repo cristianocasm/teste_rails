@@ -18,9 +18,9 @@
       <tr>
         <td><%= proposta.nome %></td>
         <td><%= proposta.descricao %></td>
-        <td><%= proposta.valor %></td>
-        <td><%= proposta.inicio %></td>
-        <td><%= proposta.fim %></td>
+        <td><%= number_to_currency(proposta.valor) %></td>
+        <td><%= proposta.inicio.strftime('%d/%m/%Y') %></td>
+        <td><%= proposta.fim.strftime('%d/%m/%Y') %></td>
         <td><%= proposta.cidade %></td>
         <td><%= link_to 'Exibir', proposta, class: 'btn btn-sm btn-success' %>
         <%= link_to 'Editar', edit_proposta_path(proposta), class: 'btn btn-sm btn-warning' %>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'Nova Proposta', new_proposta_path %>
+<%= link_to 'Nova Proposta', new_proposta_path, class: 'btn btn-success btn-block btn-lg' %>
