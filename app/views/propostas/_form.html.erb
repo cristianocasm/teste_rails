@@ -1,41 +1,50 @@
-<%= form_for(@proposta) do |f| %>
-  <% if @proposta.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@proposta.errors.count, "error") %> prohibited this proposta from being saved:</h2>
+<%= form_for(@proposta, html: { class: 'tab-content form-horizontal' }) do |f| %>
 
-      <ul>
-      <% @proposta.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+  <div class="form-group">
+    <%= f.label :nome, class: 'col-sm-2' %>
+    <div class="col-sm-4">
+      <%= f.text_field :nome, class: "form-control input-sm" %>
     </div>
-  <% end %>
+  </div>
+    
+  <div class="form-group">
+    <%= f.label :descricao, class: 'col-sm-2' %>
+    <div class="col-sm-4">
+      <%= f.text_area :descricao, class: "form-control input-sm" %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+  <div class="form-group">
+    <%= f.label :valor, class: 'col-sm-2' %>
+    <div class="col-sm-4">
+      <%= f.text_field :valor, class: 'price form input-sm' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :descricao %><br>
-    <%= f.text_area :descricao %>
+
+  <div class="form-group">
+    <%= f.label :inicio, class: 'col-sm-2' %>
+    <div class="col-sm-4">
+      <%= f.date_select :inicio, class: "form-control input-sm" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :valor %><br>
-    <%= f.text_field :valor, class: 'price' %>
+
+  <div class="form-group">
+    <%= f.label :fim, class: 'col-sm-2' %>
+    <div class="col-sm-4">
+      <%= f.date_select :fim, class: "form-control input-sm" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :inicio %><br>
-    <%= f.date_select :inicio %>
+
+  <div class="form-group">
+    <%= f.label :cidade, class: 'col-sm-2' %>
+    <div class="col-sm-4">
+      <%= f.text_field :cidade, class: 'cities form-control input-sm' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :fim %><br>
-    <%= f.date_select :fim %>
-  </div>
-  <div class="field">
-    <%= f.label :cidade %><br>
-    <%= f.text_field :cidade, class: 'cities' %>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= button_tag 'Salvar', class: "btn btn-success", type: 'submit' %>
   </div>
+
 <% end %>

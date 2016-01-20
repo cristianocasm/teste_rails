@@ -31,7 +31,10 @@ class PropostasController < ApplicationController
         format.html { redirect_to @proposta, notice: 'Proposta criada com sucesso.' }
         format.json { render :show, status: :created, location: @proposta }
       else
-        format.html { render :new }
+        format.html {
+          flash[:error] = flash_errors(@proposta)
+          render :new
+        }
         format.json { render json: @proposta.errors, status: :unprocessable_entity }
       end
     end
