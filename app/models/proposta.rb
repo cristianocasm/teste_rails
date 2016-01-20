@@ -2,11 +2,12 @@ class Proposta < ActiveRecord::Base
 
   validates_presence_of :nome,
                         :descricao,
-                        :valor,
                         :cidade
 
-  # Valida se 'início' está no futuro e antes de 'fim'                        
-  validates :inicio, date: true, date: { after_or_equal_to: Proc.new { DateTime.now } }, presence: true, on: [:create, :update]
-  validates :fim, date: true, date: { after: Proc.new { :datahora_inicio } }, on: [:create, :update]
+  validates :valor, presence: true, numericality: true, format: { :with => /\A\d{1,6}\.\d{0,2}\z/ }
+
+  # Valida se 'início' não está no passado e antes de 'fim'                        
+  validates :inicio, date: true, date: { after_or_equal_to: Proc.new { Date.today } }, presence: true, on: [:create, :update]
+  validates :fim, date: true, on: [:create, :update]
 
 end
