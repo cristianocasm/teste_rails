@@ -3,7 +3,7 @@ class CreatePropostas < ActiveRecord::Migration
     create_table :propostas do |t|
       t.string :nome
       t.text :descricao
-      t.decimal :valor
+      t.decimal :valor, :precision => 8, :scale => 2
       t.date :inicio
       t.date :fim
       t.string :cidade
