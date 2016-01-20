@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: 'propostas#index'
+  
   resources :propostas
 
   # The priority is based upon order of creation: first created -> highest priority.
