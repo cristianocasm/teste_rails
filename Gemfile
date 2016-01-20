@@ -42,6 +42,8 @@ gem 'date_validator', '~> 0.7.1'
 
 gem 'jquery-ui-rails'
 
+gem 'jquery-datatables-rails', '~> 3.3.0'
+
 group :test do
   gem 'shoulda' # Adiciona métodos simples para testes
 end

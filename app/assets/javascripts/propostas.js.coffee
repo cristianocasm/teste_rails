@@ -11,6 +11,10 @@ $(document).on 'click, focus', 'input:text.price', ->
     })
 
 jQuery ->
+  build_autocomplete()
+  build_dataTable()
+
+build_autocomplete = ->
   availableTags = [
     "Belo Horizonte",
     "Contagem",
@@ -29,3 +33,6 @@ jQuery ->
     focus: (event, ui) ->
       return false;
   })
+
+build_dataTable = ->
+  $('#datatable').DataTable()
