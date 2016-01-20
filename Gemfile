@@ -40,6 +40,8 @@ gem 'spring',        group: :development
 
 gem 'date_validator', '~> 0.7.1'
 
+gem 'jquery-ui-rails'
+
 group :test do
   gem 'shoulda' # Adiciona métodos simples para testes
 end

@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require jquery-maskmoney.min
+//= require jquery-ui
 //= require_tree .

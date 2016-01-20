@@ -9,3 +9,23 @@ $(document).on 'click, focus', 'input:text.price', ->
     allowNegative: false,
     thousands: ''
     })
+
+jQuery ->
+  availableTags = [
+    "Belo Horizonte",
+    "Contagem",
+    "Betim",
+    "Vespasiano",
+    "Ibirité",
+    "São Paulo",
+    "Rio de Janeiro",
+    "Curitiba"
+  ]
+  $( ".cities" ).autocomplete({
+    source: availableTags
+    change: (event, ui) ->
+      if !ui.item
+        $(event.target).val("")
+    focus: (event, ui) ->
+      return false;
+  })
