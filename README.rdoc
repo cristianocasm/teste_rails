@@ -31,6 +31,8 @@ Edite o arquivo <tt>config/database.yml</tt> inserindo o username bem como o pas
 
 Logo após execute o comando <tt>rake db:setup</tt> para criação, migração e seed do banco de dados.
 
+Para executar os testes você deverá executar <tt>rake test</tt> (testes desenvolvidos com MiniTest).
+
 Observação: com o intuito de acelerar o desenvolvimento, decidi que as cidades do campo "cidade" seriam pré-estabelecidas já na inicialização do plugin (ao invés de serem persistidas no banco de dados). As cidades disponíveis para escolha são:
 
 * Belo Horizonte
