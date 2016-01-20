@@ -9,7 +9,7 @@ Para utilizá-lo faça o clone localmente:
 <tt>git clone https://github.com/cristianocasm/teste_rails.git</tt>
 
 Edite o arquivo <tt>config/database.yml</tt> inserindo o username bem como o password do seu banco de dados local. Exemplo:
-<tt>
+
   default: &default
     adapter: postgresql
     pool: 5
@@ -28,7 +28,6 @@ Edite o arquivo <tt>config/database.yml</tt> inserindo o username bem como o pas
   production:
     <<: *default
     database: db/production
-</tt>
 
 Logo após execute o comando <tt>rake db:setup</tt> para criação, migração e seed do banco de dados.
 
