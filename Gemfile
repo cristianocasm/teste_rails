@@ -38,6 +38,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'date_validator', '~> 0.7.1'
+
 group :test do
   gem 'shoulda' # Adiciona métodos simples para testes
 end
