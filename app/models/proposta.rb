@@ -8,6 +8,6 @@ class Proposta < ActiveRecord::Base
 
   # Valida se 'início' não está no passado e antes de 'fim'                        
   validates :inicio, date: true, date: { after_or_equal_to: Proc.new { Date.today } }, presence: true, on: [:create, :update]
-  validates :fim, date: true, on: [:create, :update]
+  validates :fim, date: true, date: { after_or_equal_to: Proc.new { :inicio } }, on: [:create, :update]
 
 end

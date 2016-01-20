@@ -32,7 +32,7 @@ class PropostasController < ApplicationController
         format.json { render :show, status: :created, location: @proposta }
       else
         format.html {
-          flash[:error] = flash_errors(@proposta)
+          flash.now[:error] = flash_errors(@proposta)
           render :new
         }
         format.json { render json: @proposta.errors, status: :unprocessable_entity }
